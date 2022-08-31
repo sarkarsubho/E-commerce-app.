@@ -1,21 +1,20 @@
 {
-  "blog":[
+  "blog": [
     {
-      "id":1,
-      "content":{
-        "heading":"this is the heading",
-        "body":"this is the content of the blog",
-        "time":""
-
+      "id": 1,
+      "content": {
+        "heading": "this is the heading",
+        "body": "this is the content of the blog",
+        "time": ""
       },
-      "review":[
-        { 
-          "body":"the first comment"
+      "review": [
+        {
+          "body": "the first comment"
         }
       ]
     }
   ],
-  "product":[
+  "product": [
     {
       "id": 1,
       "title": "Venus VSFTP Pulse Oximeter (C101H1)",
@@ -26,7 +25,13 @@
         "c": "Country of Origin: India.",
         "d": "applicable will be applied at checkout"
       },
-      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg"
+      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg",
+
+      "review": [
+        {
+          "body": "the first comment"
+        }
+      ]
     },
     {
       "id": 2,
@@ -38,7 +43,12 @@
         "c": "Country of Origin: India.",
         "d": "applicable will be applied at checkout"
       },
-      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg"
+      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg",
+      "review": [
+        {
+          "body": "the first comment"
+        }
+      ]
     },
     {
       "id": 3,
@@ -50,7 +60,12 @@
         "c": "Country of Origin: India.",
         "d": "applicable will be applied at checkout"
       },
-      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg"
+      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg",
+      "review": [
+        {
+          "body": "the first comment"
+        }
+      ]
     },
     {
       "id": 4,
@@ -62,7 +77,12 @@
         "c": "Country of Origin: India.",
         "d": "applicable will be applied at checkout"
       },
-      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg"
+      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg",
+      "review": [
+        {
+          "body": "the first comment"
+        }
+      ]
     },
     {
       "id": 5,
@@ -74,7 +94,13 @@
         "c": "Country of Origin: India.",
         "d": "applicable will be applied at checkout"
       },
-      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg"
+      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg",
+
+      "review": [
+        {
+          "body": "the first comment"
+        }
+      ]
     },
     {
       "id": 6,
@@ -86,7 +112,12 @@
         "c": "Country of Origin: India.",
         "d": "applicable will be applied at checkout"
       },
-      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg"
+      "image": "https://www.netmeds.com/images/product-v1/600x600/944718/venus_vsftp_pulse_oximeter_c101h1_0_0.jpg",
+      "review": [
+        {
+          "body": "the first comment"
+        }
+      ]
     }
   ]
 }
