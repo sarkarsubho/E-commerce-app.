@@ -1,54 +1,44 @@
+
 import { Badge, Box, Image } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function BoxCart({data}) {
+export default function BoxCart({ data }) {
   return (
     <Link to={`/product/${data.id}`}>
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={data.image} alt={"imageAlt"} />
+      <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+        <Image src={data.image} alt={"imageAlt"} />
 
-      <Box p="6">
-        <Box display="flex" alignItems="baseline">
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            New
-          </Badge>
-         
-        </Box>
-
-        <Box
-          mt="1"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          noOfLines={1}
-        >
-          {data.title}
-        </Box>
-
-        <Box>
-          {data.price}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / Rs.
+        <Box p="6" bg={"#e2e2e2"} textAlign={"left"}>
+          <Box display="flex" alignItems="baseline">
+            <Badge borderRadius="full" px="2" colorScheme="teal">
+              New
+            </Badge>
           </Box>
-        </Box>
 
-        {/* <Box display="flex" mt="2" alignItems="center">
-          {Array(5)
-            .fill("")
-            .map((_, i) => (
-              <StarIcon
-                key={i}
-                color={i < property.rating ? "teal.500" : "gray.300"}
-              />
-            ))}
+          <Box
+            mt="1"
+            fontWeight="semibold"
+            as="h4"
+            lineHeight="tight"
+            noOfLines={1}
+          >
+            {data.title}
+          </Box>
+
+          <Box>
+            ₹ {data.price}
+            <Box as="span" color="gray.600" fontSize="sm">
+              / Rs.
+            </Box>
+          </Box>
+
+       
           <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {property.reviewCount} reviews
+            {data.review.length} reviews
           </Box>
-        </Box> */}
-
+        </Box>
       </Box>
-    </Box>
     </Link>
   );
 }

@@ -1,43 +1,143 @@
-import { Box, Flex, Heading, Text , List,
-    ListItem,
-    ListIcon} from "@chakra-ui/react";
+import {
+  
+  Flex,
+  Heading,
+  Text,
+  List,
+  ListItem,
+  ListIcon,
+  Image,
+  Grid,
+  Textarea,
+  Button,
+} from "@chakra-ui/react";
+import axios from "axios";
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { MdCheckCircle } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { updateData } from "../redux/app/action";
+import { getCartData, postData } from "../redux/cart/action";
 
 export const DetailsPage = () => {
-  return (
-    <Box>
-      <Flex>
-        <Image></Image>
-        <Box>
+  const cartdata = useSelector((state) => state.cart.data);
+  const data = useSelector((state) => state.app.data);
+  
+  const dispatch=useDispatch();
+  const { id } = useParams();
+  const [singledata, setSingledata] = useState({});
+  const [review, setReview] = useState("");
+ 
+  let added=cartdata.filter((e)=>e.id ===Number(id))
+  console.log("added",added)
+ 
+const addToCart=()=>{
+  let cartdata ={...singledata,qnt:1}
+    dispatch(postData(cartdata))
+    console.log(singledata);
+}
+
+const addReview=()=>{
+    let newreview={body: review}
+    let updateddata={...singledata};
+    updateddata.review.push(newreview);
+    console.log(updateddata)
+    dispatch(updateData(updateddata));
+    setReview("");
+}
+
+useEffect(()=>{
+  dispatch(getCartData())
+  
+},[dispatch])
+  useEffect(() => {
+    if (data.length === 0 || cartdata) {
+      axios.get(`https://netmed-clone-v1-server.herokuapp.com/product/${id}`).then((res) => {
+        setSingledata(res.data);
+      });
+      console.log("from fetch");
+    } else {
+      let sd = data.filter((e) => {
+        return e.id === Number(id);
+      });
+      setSingledata(sd[0]);
+    }
+    
+  }, [id,data,cartdata]);
+  console.log(data);
+  return ( 
+    <Grid
+      width={"80%"}
+      height={"80vh"}
+      placeItems={"center"}
+      margin={"auto"}
+      textAlign="left"
+    >
+      <Flex direction={["column","column","column","row"]}>
+        <Image src={singledata?.image}></Image>
+        <Flex direction={"column"} gap="30px">
           <Heading as={"h2"} size={"md"}>
-            heading
+            {singledata?.title}
           </Heading>
           <Heading as={"h2"} size={"md"}>
             {" "}
-            price
+            ₹.{singledata?.price} /-
           </Heading>
-        </Box>
-        <Text>Details</Text>
-        <List spacing={3}>
-          <ListItem>
-            <ListIcon as={MdCheckCircle} color="green.500" />
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit
-          </ListItem>
-          <ListItem>
-            <ListIcon as={Md} color="green.500" />
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
-          </ListItem>
-          <ListItem>
-            <ListIcon as={MdCheckCircle} color="green.500" />
-            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-          </ListItem>
-          {/* You can also use custom icons from react-icons */}
-          <ListItem>
-            <ListIcon as={MdSettings} color="green.500" />
-            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-          </ListItem>
-        </List>
+
+          <Text fontSize={"21px"} fontWeight={600}>
+            Details
+          </Text>
+          <List spacing={3}>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              {singledata?.detail?.a}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              {singledata?.detail?.b}
+            </ListItem>
+
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              {singledata?.detail?.c}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              {singledata?.detail?.d}
+            </ListItem>
+          </List>
+          {/* review */}
+          <Text fontSize={"21px"} fontWeight={600}>
+            Review
+          </Text>
+
+          <List spacing={3}>
+            {singledata?.review?.map((e,i) => {
+              return (
+                <ListItem key={i}>
+                  <ListIcon as={MdCheckCircle} color="green.500" />
+                  {e.body}
+                </ListItem>
+              );
+            })}
+          </List>
+
+          <Flex alignItems={"end"} gap="20px">
+            <Text mb="8px" fontSize={"15px"} fontWeight={600}>Give Your Review</Text>
+            <Textarea
+              value={review}
+              onChange={(e)=>setReview(e.target.value)}
+              placeholder="give your consern here"
+              size="sm"
+            />
+            <Button colorScheme={"green"} disabled={!review} onClick={addReview}> Post</Button>
+          </Flex>
+          {added[0]?.qnt >=1 ? <Link to="/cart"><Button> Already Added Goto cart</Button></Link>: 
+          <Button colorScheme={"teal"} onClick={addToCart}> Add To Cart</Button>}
+        </Flex>
       </Flex>
-    </Box>
+    </Grid>
   );
 };
