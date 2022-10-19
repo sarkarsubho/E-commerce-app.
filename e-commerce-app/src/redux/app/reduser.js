@@ -11,7 +11,7 @@ export const appReduser = (state = initState, { type, payload }) => {
     case GETDATAREQUEST:
       return { ...state, loading: true, error: false };
     case GETDATASUCCESS:
-      return { ...state, loading: true, error: false, data: payload };
+      return { ...state, loading: false, error: false, data: payload };
     case GETDATAERROR:
       return { ...state, loading: false, error: true };
     default:
