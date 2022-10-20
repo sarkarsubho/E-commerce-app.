@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BoxCart from "../components/BoxCart";
@@ -28,7 +28,7 @@ export const Cart = () => {
     }, [dispatch]);
     return (<>
     <Text fontSize={"xl"} fontWeight={600}> Total Payable Amount :-{totalblance}</Text>
-      <Grid  templateColumns='repeat(3, 1fr)' gap={6} w="80%" placeItems={"center"} margin={" 40px auto"}>
+      <SimpleGrid  columns={[1,2, 3,4]} gap={6} w="80%" placeItems={"center"} margin={" 40px auto"}>
         
       {data.map((e) => {
         return <Box  key={e.id}>
@@ -51,7 +51,7 @@ export const Cart = () => {
         </Flex>
         </Box>
       })}
-    </Grid>
+    </SimpleGrid>
     </>
     );
 };

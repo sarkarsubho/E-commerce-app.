@@ -20,6 +20,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { updateData } from "../redux/app/action";
 import { getCartData, postData } from "../redux/cart/action";
+import {Loader} from "../components/Loader"
 
 export const DetailsPage = () => {
   const cartdata = useSelector((state) => state.cart.data);
@@ -67,6 +68,14 @@ useEffect(()=>{
     
   }, [id,data,cartdata]);
   console.log(data);
+
+  if(Object.keys(singledata).length ===0){
+    console.log("undefined")
+    return (
+      <Loader></Loader>
+    )
+  }
+
   return ( 
     <Grid
       width={"80%"}
