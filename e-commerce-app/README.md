@@ -6,15 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * freamwork 
   react
   react router dom
-** UI
-  chakra UI
-  react Icons
-**statemanagement
-  redux
-  react-redux
-**async 
-  axios
-  redux-thunk 
+* UI.\
+  chakra UI.\
+  react Icons.\
+* statemanagement.\
+  redux.\
+  react-redux.\
+* async .\
+  axios.\
+  redux-thunk .\
 
 ## Available Scripts
 
