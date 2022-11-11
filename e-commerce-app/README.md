@@ -2,6 +2,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## techStack
+* freamwork 
+  react
+  react router dom
+** UI
+  chakra UI
+  react Icons
+**statemanagement
+  redux
+  react-redux
+**async 
+  axios
+  redux-thunk 
+
 ## Available Scripts
 
 In the project directory, you can run:
