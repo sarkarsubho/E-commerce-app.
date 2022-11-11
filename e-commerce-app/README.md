@@ -3,8 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## techStack
-* freamwork 
-  react
+* freamwork .\
+  react.\
   react router dom
 * UI.\
   chakra UI.\
