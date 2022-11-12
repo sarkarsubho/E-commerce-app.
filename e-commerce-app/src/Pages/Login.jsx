@@ -32,6 +32,8 @@ export function Login() {
   const [username, setUserName] = useState("");
  const location =useLocation();
   const fetchdata = async (er) => {
+    try{
+
     let data = await fetch(
       `https://masai-api-mocker.herokuapp.com/user/${er.user}`,
       {
@@ -48,6 +50,9 @@ export function Login() {
     dispatch({ type: LOGINSUCCESS, payload: userData });
     console.log(userData,"location",location);
     navigate("/");
+    }catch(er){
+      console.log(er.message)
+    }
   };
 
   const handleSubmmit = () => {
