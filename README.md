@@ -3,18 +3,41 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## techStack
-* freamwork .\
-  react.\
-  react router dom
-* UI.\
-  chakra UI.\
-  react Icons.\
-* statemanagement.\
-  redux.\
-  react-redux.\
-* async .\
-  axios.\
-  redux-thunk .\
+### #freamworks
+  * react
+  * react router dom
+### #UI
+  * chakra UI
+  * react Icons
+### #statemanagement
+  * redux
+  * react-redux
+### #async operations
+  * axios
+  * redux-thunk 
+
+## Website view
+
+## Register Page
+
+<img src="https://drive.google.com/file/d/1G7BxfRxkryEQcENlm7RB9W14Fv-IemBa/view?usp=share_link">
+
+## Login Page
+
+<img src="https://drive.google.com/file/d/1un-1b-FfmEJDw861zpjf1ZcwmgbbDu9l/view?usp=share_link">
+
+## Home Page
+
+<img src="https://drive.google.com/file/d/17rK6C3Y4VrbUp6-yorb4ALeyHTHzPyP2/view?usp=share_link">
+
+## Details Page
+
+<img src="https://drive.google.com/file/d/1SxeS5lPVMHq7imuHUqDR_vuP8DrstRCy/view?usp=share_link">
+
+## Cart Page
+
+<img src="https://drive.google.com/file/d/1uEnx0QAz_MBewkD9ef5V1tfvgk1AAqvo/view?usp=share_link">
+
 
 ## Available Scripts
 
