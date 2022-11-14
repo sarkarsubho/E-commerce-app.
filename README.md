@@ -3,41 +3,48 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## techStack
+
 ### #freamworks
-  * react
-  * react router dom
+
+- react
+- react router dom
+
 ### #UI
-  * chakra UI
-  * react Icons
+
+- chakra UI
+- react Icons
+
 ### #statemanagement
-  * redux
-  * react-redux
+
+- redux
+- react-redux
+
 ### #async operations
-  * axios
-  * redux-thunk 
+
+- axios
+- redux-thunk
 
 ## Website view
 
 ## Register Page
 
-<img src="https://drive.google.com/file/d/1G7BxfRxkryEQcENlm7RB9W14Fv-IemBa/view?usp=share_link">
+<img src="https://miro.medium.com/max/720/1*89E5Hzh6UyVqKILwOEP0nQ.png">
 
 ## Login Page
 
-<img src="https://drive.google.com/file/d/1un-1b-FfmEJDw861zpjf1ZcwmgbbDu9l/view?usp=share_link">
+<img src="https://miro.medium.com/max/720/1*csisPYXxUf2uQEM9eIRSpQ.png">
 
 ## Home Page
 
-<img src="https://drive.google.com/file/d/17rK6C3Y4VrbUp6-yorb4ALeyHTHzPyP2/view?usp=share_link">
+<img src="https://miro.medium.com/max/720/1*Ye4qmmIt2mFSSIuCy4eRfA.png">
 
 ## Details Page
 
-<img src="https://drive.google.com/file/d/1SxeS5lPVMHq7imuHUqDR_vuP8DrstRCy/view?usp=share_link">
+<img src="https://miro.medium.com/max/1100/1*7K41sE2z8_gjW2eD8gMVFA.png">
 
 ## Cart Page
 
-<img src="https://drive.google.com/file/d/1uEnx0QAz_MBewkD9ef5V1tfvgk1AAqvo/view?usp=share_link">
-
+<img src="https://miro.medium.com/max/720/1*1VvcUqirzaJYUh0LbhVlPg.png">
 
 ## Available Scripts
 
