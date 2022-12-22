@@ -3,7 +3,7 @@ import { GETDATAERROR, GETDATAREQUEST, GETDATASUCCESS, UPDATEDATAERROR, UPDATEDA
 
 export const getData=()=>(dispatch)=>{
     dispatch({type:GETDATAREQUEST})
-  axios.get("https://netmed-clone-v1-server.herokuapp.com/product").then(res=>{
+  axios.get("/products").then(res=>{
     console.log(res.data);
     dispatch({type:GETDATASUCCESS,payload:res.data})
   }).catch(er=>{
@@ -13,7 +13,7 @@ export const getData=()=>(dispatch)=>{
 
 export const updateData=(payload)=>(dispatch)=>{
     dispatch({type:UPDATEDATAREQUEST})
-    axios.patch(`https://netmed-clone-v1-server.herokuapp.com/product/${payload.id}`,payload).then(res=>{
+    axios.patch(`/products/${payload._id}`,payload).then(res=>{
       console.log(res.data);
       dispatch(getData())
     }).catch(er=>{

@@ -8,9 +8,15 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
+import axios from "axios";
+
+axios.defaults.baseURL = "https://rich-erin-moth-ring.cyclic.app";
+// axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.headers.post["Content-Type"] = "application/json";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <ChakraProvider>
         <Provider store={store}>
@@ -18,7 +24,7 @@ root.render(
         </Provider>
       </ChakraProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

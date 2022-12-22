@@ -48,9 +48,7 @@ const initstate = {
   name: "",
   email: "",
   password: "",
-  username: "",
-  mobile: 0,
-  description: "",
+  mobile: ""
 };
 
 export function Register() {
@@ -114,21 +112,7 @@ export function Register() {
                 />
               </FormControl>
             </Box>
-            <Box>
-              <FormControl id="username" isRequired>
-                <FormLabel> User Name</FormLabel>
-                <Input
-                  type="text"
-                  value={state.username}
-                  onChange={(e) =>
-                    dispatchState({
-                      type: "username",
-                      payload: e.target.value,
-                    })
-                  }
-                />
-              </FormControl>
-            </Box>
+           
 
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
@@ -174,19 +158,7 @@ export function Register() {
                 }
               />
             </FormControl>
-            <Input
-              border={"1px solid lightgray"}
-              rounded={"6px"}
-              pl={"16px"}
-              placeholder="Small Description "
-              value={state.description}
-              onChange={(e) =>
-                dispatchState({
-                  type: "description",
-                  payload: e.target.value,
-                })
-              }
-            ></Input>
+            
             <FormControl id="mobile" isRequired>
               <FormLabel>Profile Pic.</FormLabel>
               <Flex direction={"row"}>

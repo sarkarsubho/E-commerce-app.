@@ -86,7 +86,7 @@ export const Cart = () => {
                       fontSize={"23px"}
                     ></MdOutlineDeleteForever>
                   }
-                  onClick={() => deleteItem(e.id)}
+                  onClick={() => deleteItem(e._id)}
                   colorScheme={"red"}
                 >
                   Remove

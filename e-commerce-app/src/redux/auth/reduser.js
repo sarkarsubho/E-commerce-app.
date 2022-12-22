@@ -9,9 +9,9 @@ const initState = {
 export const authReduser = (state = initState, { type, payload }) => {
   switch (type) {
     case types.LOGINSUCCESS:
-      saveData("userDtl", payload);
+      saveData("userDtl", payload.user);
       saveData("token", payload.token);
-      return { ...state, token: payload.token, user: payload };
+      return { ...state, token: payload.token, user: payload.user };
     case types.LOGOUT:
       return {
         ...state,

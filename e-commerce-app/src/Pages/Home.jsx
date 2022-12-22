@@ -21,7 +21,7 @@ export const Home = () => {
   return (
     <SimpleGrid  columns={[1,2, 3,4]} gap={6} w="80%" placeItems={"center"} margin={" 40px auto"}>
       {data.map((e) => {
-        return <BoxCart key={e.id} data={e}></BoxCart>;
+        return <BoxCart key={e._id} data={e}></BoxCart>;
       })}
     </SimpleGrid>
   );

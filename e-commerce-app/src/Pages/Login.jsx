@@ -29,34 +29,34 @@ export function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [password, setPassword] = useState("");
-  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
  const location =useLocation();
-  const fetchdata = async (er) => {
-    try{
+  // const fetchdata = async (er) => {
+  //   try{
 
-    let data = await fetch(
-      `https://masai-api-mocker.herokuapp.com/user/${er.user}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${er.token}`,
-        },
-      }
-    );
+  //   let data = await fetch(
+  //     `https://masai-api-mocker.herokuapp.com/user/${er.user}`,
+  //     {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${er.token}`,
+  //       },
+  //     }
+  //   );
 
-    let userData = await data.json();
+  //   let userData = await data.json();
     
 
-    dispatch({ type: LOGINSUCCESS, payload: userData });
-    console.log(userData,"location",location);
-    navigate("/");
-    }catch(er){
-      console.log(er.message)
-    }
-  };
+  //   dispatch({ type: LOGINSUCCESS, payload: userData });
+  //   console.log(userData,"location",location);
+  //   navigate("/");
+  //   }catch(er){
+  //     console.log(er.message)
+  //   }
+  // };
 
   const handleSubmmit = () => {
-    let logindata = { password, username };
+    let logindata = { password, email };
     console.log(logindata);
     dispatch(login(logindata)).then((res) => {
       console.log(res);
@@ -67,8 +67,8 @@ export function Login() {
       }
       if (res.status === LOGINSUCCESS) {
         console.log(res);
-
-        fetchdata(res);
+        navigate("/");
+        
         
       }
     });
@@ -83,10 +83,10 @@ export function Login() {
         <Box rounded={"lg"} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
             <FormControl id="email">
-              <FormLabel>User Name</FormLabel>
+              <FormLabel>User Email</FormLabel>
               <Input
-                type={"text"}
-                onChange={(e) => setUserName(e.target.value)}
+                type={"email"}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </FormControl>
             <FormControl id="password">

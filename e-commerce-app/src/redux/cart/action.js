@@ -15,7 +15,7 @@ import {
 export const postData = (payload) => (dispatch) => {
   dispatch({ type: POSTDATAREQUEST });
   axios
-    .post("https://netmed-clone-v1-server.herokuapp.com/cart", payload)
+    .post("/cart/post", payload)
     .then((res) => {
       console.log(res.data);
       dispatch({ type: POSTDATASUCCESS, payload: res.data });
@@ -28,7 +28,7 @@ export const postData = (payload) => (dispatch) => {
 export const getCartData = () => (dispatch) => {
   dispatch({ type: GETCARTDATAREQUEST });
   axios
-    .get("https://netmed-clone-v1-server.herokuapp.com/cart")
+    .get("/cart")
     .then((res) => {
       console.log(res.data);
       dispatch({ type: GETCARTDATASUCCESS, payload: res.data });
@@ -41,7 +41,7 @@ export const getCartData = () => (dispatch) => {
 export const deleteCartData = (id) => (dispatch) => {
   dispatch({ type: DELETECARTDATAREQUEST });
   axios
-    .delete(`https://netmed-clone-v1-server.herokuapp.com/cart/${id}`)
+    .delete(`cart/${id}`)
     .then((res) => {
       console.log(res.data);
       dispatch(getCartData());
@@ -54,7 +54,7 @@ export const deleteCartData = (id) => (dispatch) => {
 export const updateCartData=(payload)=>(dispatch)=>{
   dispatch({ type: UPDATECARTDATAREQUEST });
   axios
-    .patch(`https://netmed-clone-v1-server.herokuapp.com/cart/${payload.id}`,payload)
+    .patch(`/cart/${payload._id}`,payload)
     .then((res) => {
       console.log(res.data);
       dispatch(getCartData());

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function BoxCart({ data }) {
   return (
-    <Link to={`/product/${data.id}`}>
+    <Link to={`/product/${data._id}`}>
       <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
         <Image src={data.image} alt={"imageAlt"} />
 
